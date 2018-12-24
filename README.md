@@ -30,6 +30,6 @@ followed by your code
 ex:
 ``` ` print("Hello World!") ```
 
-### ***this is also how I decided to skimp out on implementing a variable system***
+***this is also how I decided to skimp out on implementing a variable system***
 
 ## Extending it
