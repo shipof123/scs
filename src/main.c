@@ -80,7 +80,9 @@ char* builtin_name[] = {
     "help",
     "glob",
     "sh_stat",
+    "`",
     "~",
+    "sh_lua",
     "exit"
 };
 
@@ -89,6 +91,7 @@ int (*builtin_func[]) (char**) = {
     &sh_help,
     &sh_glob,
     &sh_stat,
+    &sh_lua,
     &sh_lua,
     &sh_exit
 };
@@ -118,6 +121,7 @@ int sh_glob(char** args){
 int sh_lua(char** args){
     if(args[1] == NULL){
         fprintf(stderr, "scs: expected >= 1 argument to embedded lua shell\n");
+        return 1;
     }
     char* buff = args[1];
     for (size_t i = 2; args[i]; i++) {
